@@ -1,0 +1,26 @@
+From Andrew Bruno, 3/6/2013
+About the data files
+
+Attached is some sample HWI
+data. There are two files: samples.tsv and experiments.tsv (<TAB>
+separated)
+
+samples.tsv = Contains the info on the actual protein samples
+
+experiments.tsv = Contains the experimental data from the screens.
+Primary key here would be the plate_no, this will link you back to the
+protein samples. 
+
+There are 1536 records (experiments) for each protein (3072 total). This
+data represents a single "screen" of the protein at a specific point in
+time.  The protein is placed in 1536 wells (cocktails) which makes up
+the "screen". Each cocktail is made up a one or more solution components
+(chemicals). The chemicals are listed ';' separated in the
+"solution_components" column. 
+
+A picture is taken (image_url) of the cocktail and is processed by an
+automated classifier. This classifier computes the probabilities for 10
+classes. The class with the highest probability wins and is captured in
+"class_10way" column. The "verfied_crystal" is 1 if a human has verified
+that it's a crystal. 
+
